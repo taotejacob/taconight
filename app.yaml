@@ -14,6 +14,9 @@ handlers:
   static_files: favicon.ico
   upload: favicon\.ico
 
+- url: /images/
+  static_dir: images/
+
 # you missed this section. It allows all .css files inside stylesheets
 - url: /stylesheets/(.*\.(css)) 
   static_files: stylesheets/\1
@@ -21,7 +24,12 @@ handlers:
 
 - url: /stylesheets/(.*\.(js))
   static_files: stylesheets/\1
-  upload: stylesheets/(.*\.(js))  
+  upload: stylesheets/(.*\.(js))
+
+
+- url: /auth/.*
+  script: main.application
+  login: required    
 
 - url: /.*
   script: main.application
