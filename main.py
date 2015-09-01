@@ -160,6 +160,10 @@ class About(Handler):
 	def get(self):
 		self.render('about.html')
 
+class Admin(Handler):
+	def get(self):
+		self.render('admin.html')
+
 
 application = webapp2.WSGIApplication([('/', PublicHome),
 									   ('/auth/rsvp', Rsvp),
@@ -167,5 +171,6 @@ application = webapp2.WSGIApplication([('/', PublicHome),
 									   ('/about', About),
 									   ('/auth/welcome', Welcome),
 									   ('/log-out', Logout),
+									   ('/_admin/admin', Admin),
 									   ('/tester', Tester)],
 									    debug=True)

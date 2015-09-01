@@ -29,7 +29,11 @@ handlers:
 
 - url: /auth/.*
   script: main.application
-  login: required    
+  login: required
+
+- url: /_admin/.*
+  script: main.application
+  login: admin      
 
 - url: /.*
   script: main.application
