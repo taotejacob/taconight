@@ -28,6 +28,9 @@ template_dir = os.path.join(os.path.dirname(__file__), 'templates')
 jinja_env = jinja2.Environment(loader = jinja2.FileSystemLoader(template_dir))
 
 
+logout_url = users.create_logout_url('/log-out')
+login_url = users.create_login_url('/log-in')
+
 def render_str(template, **params):
     t = jinja_env.get_template(template)
     return t.render(params)
@@ -54,10 +57,11 @@ class Handler(webapp2.RequestHandler):
 class Event(ndb.Model):
 	date = ndb.DateTimeProperty()
 	location = ndb.StringProperty()
+	invited = ndb.IntegerProperty()
 	attendees = ndb.StringProperty()
 	completed = ndb.IntegerProperty()
 	messages = ndb.TextProperty()
-	max_invite = ndb.IntegerProperty()
+	max_attend = ndb.IntegerProperty()
 	host = ndb.StringProperty()
 
 #create users database:
@@ -70,6 +74,7 @@ class Account(ndb.Model):
 	diet_info = ndb.StringProperty()
 	date = ndb.DateTimeProperty(auto_now_add = True)
 	attendance = ndb.IntegerProperty()
+	approved = ndb.IntegerProperty()
 
 
 
@@ -83,7 +88,8 @@ class Account(ndb.Model):
 
 class PublicHome(Handler):
 	def get(self):
-		self.render('publichome.html')
+		self.render('publichome.html',
+			logout_url = logout_url)
 
 class Rsvp(Handler):
 	def get(self):
@@ -95,36 +101,60 @@ class Rsvp(Handler):
 			self.redirect('/auth/signup')
 
 		self.render('rsvp.html',
-			user_name = user_name)
+			logout_url = logout_url)
 
 
 
-def inputUserData(email, first_name, last_name, user_name, diet_info):
+def inputUserData(first_name, last_name, user_name, diet_info):
 	p = Account(username = user_name.nickname(),
-				#userid = user_name.user_id(),
 				email = user_name.email(),
 				first_name = first_name,
 				last_name = last_name,
 				first_last = first_name + " " + last_name[0],
 				attendance = 0,
-				diet_info = "Vegan:0, Vegitarian:0, Kosher:0"
+				diet_info = "Vegan:0, Vegitarian:0, Kosher:0",
+				approved = 0
 				)
 	p.put()
 
 
-
+class Tester(Handler):
+	def get(self):
+		self.render('tester.html')
 
 class SignUp(Handler):
 	def get(self):
+		user_name = users.get_current_user()
+
+		#Test if user is registered
+		q = Account.query(Account.username == user_name.nickname()).count()
+		if q > 0:
+			self.redirect('/auth/rsvp')
+
 		self.render('signup.html')
 
 	def post(self):
 		user_name = users.get_current_user()
 		first_name = self.request.get('first_name')
 		last_name = self.request.get('last_name')
-		diet_info = self.request.get('diet_info')
-		inputUserData(email, first_name, last_name, user_name, diet_info)
-		self.redirect("/auth/holder_log")	
+		diet_info = self.request.get_all('diet_info')
+		inputUserData(first_name, last_name, user_name, diet_info)
+		self.redirect("welcome")	
+
+class Welcome(Handler):
+	def get(self):
+		user_name = users.get_current_user()
+
+		#Test if user is registered
+		q = Account.query(Account.username == user_name.nickname()).count()
+		if q < 1:
+			self.redirect('/auth/signup')
+
+		self.render('welcome.html')
+
+class Logout(Handler):
+	def get(self):
+		self.redirect('/')
 
 class About(Handler):
 	def get(self):
@@ -134,5 +164,8 @@ class About(Handler):
 application = webapp2.WSGIApplication([('/', PublicHome),
 									   ('/auth/rsvp', Rsvp),
 									   ('/auth/signup', SignUp),
-									   ('/about', About)],
+									   ('/about', About),
+									   ('/auth/welcome', Welcome),
+									   ('/log-out', Logout),
+									   ('/tester', Tester)],
 									    debug=True)

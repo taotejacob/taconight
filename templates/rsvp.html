@@ -3,7 +3,7 @@
 	<head>
 		<style type="text/css">
 				html { 
-					  background: url(/images/platter-food.jpg) no-repeat center center fixed; 
+					  background: url(/images/bowl-board-min.jpg) no-repeat center center fixed; 
 					  -webkit-background-size: cover;
 					  -moz-background-size: cover;
 					  -o-background-size: cover;
@@ -36,8 +36,14 @@
 					top:1px;
 				}
 
+				.mainWrap-rsvp {
+					margin-left: 50%;
+					margin-top: 10%; 
+					font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+				}
+
 				.mainWrap {
-					margin: 20%; 
+					margin-left: 20%; 
 					font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
 				}
 
@@ -67,19 +73,17 @@
 		</style>
 	</head>
 	<body>
-		<div class="mainWrap">
+		<a href="{{logout_url}}">Log Out </a>
+		<div class="mainWrap-rsvp">
 			<h1 class="announce">
 			Can you make it?
 			</h1>
 			<br>
 			<a href="##" class="myButton">Yes</a>
-			<span style="padding:10%"></span>
+			&nbsp;&nbsp;&nbsp;
 			<a href="##" class="myButton">No</a>
 		</div>
 	</body>
-
-<br><br><br>
-{{user_name}}
 
 
 
