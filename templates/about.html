@@ -2,78 +2,34 @@
 <html lang="en">
 	<head>
 		<style>
-		html { 
-			  background: url(/images/platter-food-min.jpg) no-repeat center center fixed; 
-			  -webkit-background-size: cover;
-			  -moz-background-size: cover;
-			  -o-background-size: cover;
-			  background-size: cover;
-			}
-
-				.myButton {
-					background-color:#f05f40;
-					-moz-border-radius:6px;
-					-webkit-border-radius:6px;
-					border-radius:6px;
-					border:1px solid #f04c2b;
-					display:inline-block;
-					cursor:pointer;
-					color:#ffffff;
-					font-family:'Open Sans','Helvetica Neue',Arial,sans-serif;;
-					font-size:17px;
-					font-weight:bold;
-					padding:14px 45px;
-					text-decoration:none;
-					margin: 5px;
-				}
-
-				.myButton:hover {
-					background-color:#f04c2b;
-				}
-
-				.myButton:active {
-					position:relative;
-					top:1px;
-				}
-
-				.mainWrap {
-					margin: 20%; 
-					font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
-				}
-
-				.announce {
-					color: #ffffff; 
-					font-weight:700;
-					font-size: 65px;
-				}
-
-				.announce-black {
-					color: #4d4a4a; 
-					font-weight:700;
-					font-size: 65px;
-				}
-
-				.left-info {
-					margin-left:10%; 
-					margin-top:10%;
-					margin-right: 30%;
-				}
-
-				.info-text {
-					font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif; 
-					font-size:24px; 
-					color: #4d4a4a;
-					margin-left:5px;
+			body { 
+				  background: url(/images/platter-food-min.jpg) no-repeat center center fixed; 
+				  -webkit-background-size: cover;
+				  -moz-background-size: cover;
+				  -o-background-size: cover;
+				  background-size: cover;
 				}
 		</style>
+			<link rel="stylesheet" href="/stylesheets/bootstrap.css">
+			<script src="/stylesheets/bootstrap.js"></script>
 	</head>
-	<body>
-	<div class="left-info">
-		<p class="info-text">Taco night is a way to see friends, built community, breakdown liminal spaces, ideate, develop synergies, and explore significant social intersections... and eat tacos!</p>
-		<br>
-		<a href="/" class="myButton">Home</a>
-	</div>
 
+	<body>
+		<div class="container">
+			<br>
+			<div class="row">
+				<div class="col-md-8">
+					<div class="jumbotron">
+						<p>Taco night is a way to see friends, built community, breakdown liminal spaces, ideate, develop synergies, and explore significant social intersections... and eat tacos!<p>
+
+						<br>
+
+						<a href="/" class="btn btn-lg btn-default">Home</a>						
+					</div>
+				</div>
+				<div class="col-md-4"></div>
+			</div>
+		</div>
 	</body>
 
 </html>

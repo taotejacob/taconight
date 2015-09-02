@@ -1,88 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+	
 	<head>
-		<style type="text/css">
-				html { 
-					  background-image:url(/images/food.png); 
-					}
-
-				.myButton {
-					background-color:#f05f40;
-					-moz-border-radius:6px;
-					-webkit-border-radius:6px;
-					border-radius:6px;
-					border:1px solid #f04c2b;
-					display:inline-block;
-					cursor:pointer;
-					color:#ffffff;
-					font-family:'Open Sans','Helvetica Neue',Arial,sans-serif;;
-					font-size:17px;
-					font-weight:bold;
-					padding:14px 45px;
-					text-decoration:none;
-					margin: 5px;
+		<style>
+			body { 
+				  background-image:url(/images/food.png);
 				}
-
-				.myButton:hover {
-					background-color:#f04c2b;
-				}
-
-				.myButton:active {
-					position:relative;
-					top:1px;
-				}
-
-				.mainWrap {
-					margin: 20%; 
-					font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
-				}
-
-				.announce {
-					color: #ffffff; 
-					font-weight:700;
-					font-size: 65px;
-				}
-
-				.announce-black {
-					color: #4d4a4a; 
-					font-weight:700;
-					font-size: 65px;
-				}
-
-				.left-info {
-					margin-left:75%; 
-					margin-top:10%;
-				}
-
-				.info-text {
-					font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif; 
-					font-size:24px; 
-					color: #696666;
-					margin-left:5px;
-				}
-
-
 		</style>
+
+			<link rel="stylesheet" href="/stylesheets/bootstrap.css">
+			<script src="/stylesheets/bootstrap.js"></script>
+
 	</head>
+
+	<head>
+
+
 	<body>
-		<h1 class="announce-black">
-			Tell us about yourself
-		</h1>
+		<div class="container">
+			<div style="margin-top:10%"></div>
+			<h1 class="h1-black">Tell us about yourself</h1>
 
-	<form class = "form" method = "post">
-		<label>Full Name</label>
-	    	<input type="text" name="first_name" class="field-divided" placeholder="First Name" />
-	    	<input type="text" name="last_name" class="field-divided" placeholder="Last Name" />
-		<br><br>
-	    <label>Dietary Restrictions</label><br>
-	        <input type="checkbox" name="diet_info" value="Vegan">Vegan<br>
-			<input type="checkbox" name="diet_info" value="Vegetarian">Vegetarian<br> 
-			<input type="checkbox" name="diet_info" value="Kosher">Kosher<br>
+			<form class = "form" method = "post">
+				<label>Full Name</label>
+			    	<input type="text" name="first_name" class="field-divided" placeholder="First Name" />
+			    	<input type="text" name="last_name" class="field-divided" placeholder="Last Name" />
+				<br><br>
+			    <label>Dietary Restrictions</label><br>
+			        <input type="checkbox" name="diet_info" value="Vegan">Vegan<br>
+					<input type="checkbox" name="diet_info" value="Vegetarian">Vegetarian<br> 
+					<input type="checkbox" name="diet_info" value="Kosher">Kosher<br>
 
-			<br><br>
+					<br><br>
 
-        <input type="submit" value="Submit" class ="myButton"/>
-	</form>
+		        <input type="submit" value="Submit" class ="btn btn-lg btn-default"/>
+			</form>
+		</div>
 
 	</body>
 

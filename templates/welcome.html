@@ -1,78 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 	<head>
-		<style type="text/css">
-				html { 
-					  background: url(/images/platter-food-min.jpg) no-repeat center center fixed; 
-					  -webkit-background-size: cover;
-					  -moz-background-size: cover;
-					  -o-background-size: cover;
-					  background-size: cover;
-					}
-
-				.myButton {
-					background-color:#f05f40;
-					-moz-border-radius:6px;
-					-webkit-border-radius:6px;
-					border-radius:6px;
-					border:1px solid #f04c2b;
-					display:inline-block;
-					cursor:pointer;
-					color:#ffffff;
-					font-family:'Open Sans','Helvetica Neue',Arial,sans-serif;;
-					font-size:17px;
-					font-weight:bold;
-					padding:14px 45px;
-					text-decoration:none;
-					margin: 5px;
-				}
-
-				.myButton:hover {
-					background-color:#f04c2b;
-				}
-
-				.myButton:active {
-					position:relative;
-					top:1px;
-				}
-
-				.mainWrap {
-					margin: 20%; 
-					font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
-				}
-
-				.announce {
-					color: #ffffff; 
-					font-weight:700;
-					font-size: 65px;
-				}
-
-				.announce-black {
-					color: #4d4a4a; 
-					font-weight:700;
-					font-size: 65px;
-				}
-
-				.left-info {
-					margin-left:75%; 
-					margin-top:10%;
-				}
-
-				.info-text {
-					font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif; 
-					font-size:24px; 
-					color: #696666;
-					margin-left:5px;
+		<style>
+			body { 
+				  background: url(/images/platter-food-min.jpg) no-repeat center center fixed; 
+				  -webkit-background-size: cover;
+				  -moz-background-size: cover;
+				  -o-background-size: cover;
+				  background-size: cover;
 				}
 		</style>
+			<link rel="stylesheet" href="/stylesheets/bootstrap.css">
+			<script src="/stylesheets/bootstrap.js"></script>
 	</head>
+
+
 	<body>
-		<div class="mainWrap" style="margin-top:5%">
-			<h1 class="announce">
-			Awesome! You're all signed up. We'll let you know when your request has been approved.
-			</h1>
-			<br>
-			<a href="/" class="myButton">Home</a>
+		<div class="container">
+			<div style="margin-top:10%"></div>
+			<div class="row">
+				<div class="col-md-1"></div>
+				<div class="col-md-10">
+					<h1 class="h1-white">Awesome! You're all signed up. We'll let you know when your request has been approved.</h1>
+					<br>
+					<a href="/" class="btn btn-lg btn-default">Home</a>
+				</div>
+				<div class="col-md-1"></div>
+			</div>
 		</div>
 	</body>
 

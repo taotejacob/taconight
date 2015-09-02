@@ -2,85 +2,45 @@
 <html lang="en">
 	<head>
 		<style>
-		html { 
-			  background: url(/images/avacado-mango.jpg) no-repeat center center fixed; 
-			  -webkit-background-size: cover;
-			  -moz-background-size: cover;
-			  -o-background-size: cover;
-			  background-size: cover;
-			}
-
-				.myButton {
-					background-color:#f05f40;
-					-moz-border-radius:6px;
-					-webkit-border-radius:6px;
-					border-radius:6px;
-					border:1px solid #f04c2b;
-					display:inline-block;
-					cursor:pointer;
-					color:#ffffff;
-					font-family:'Open Sans','Helvetica Neue',Arial,sans-serif;;
-					font-size:17px;
-					font-weight:bold;
-					padding:14px 45px;
-					text-decoration:none;
-					margin: 5px;
+			body { 
+				  background: url(/images/avacado-mango.jpg) no-repeat center center fixed; 
+				  -webkit-background-size: cover;
+				  -moz-background-size: cover;
+				  -o-background-size: cover;
+				  background-size: cover;
 				}
-
-				.myButton:hover {
-					background-color:#f04c2b;
-				}
-
-				.myButton:active {
-					position:relative;
-					top:1px;
-				}
-
-				.mainWrap {
-					margin: 20%; 
-					font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
-				}
-
-				.announce {
-					color: #ffffff; 
-					font-weight:700;
-					font-size: 65px;
-				}
-
-				.announce-black {
-					color: #4d4a4a; 
-					font-weight:700;
-					font-size: 65px;
-				}
-
-				.left-info {
-					margin-left:75%; 
-					margin-top:10%;
-				}
-
-				.info-text {
-					font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif; 
-					font-size:24px; 
-					color: #696666;
-					margin-left:5px;
-				}
-
 		</style>
+
+			<link rel="stylesheet" href="/stylesheets/bootstrap.css">
+			<script src="/stylesheets/bootstrap.js"></script>
+
 	</head>
 
 
 	<body>
-		<a href="{{logout_url}}">Log Out </a>
-	<div class="mainWrap">
-	<h1 class="announce">Welcome to Taco Night!</h1>
-		<br>
-				<a href="/about" class="myButton">About</a>
-		<!-- 		<br> -->
-				<a href="auth/rsvp" class="myButton">RSVP</a>
-				<!-- <br> -->
-				<a href="auth/signup" class="myButton">Sign Up</a>
+		<div class="text-right"><a href="{{logout_url}}" class="btn btn-xs btn-warning">Log Out</a></div>
+		<div class="container">
+			<div style="margin-top:10%"></div>
+			<div class="row text-center">
+				<div class="col-md-2"></div>
+				<div class="col-md-8">
 
-	</div>
+					<div class="row">
+						<h1 class="h1-white">Welcome to Taco Night!</h1>
+					</div>
+
+					<br><br>
+
+					<div class="row">
+							<a href="/about" class="btn btn-lg btn-default">About</a>&nbsp;&nbsp;&nbsp;
+							<a href="auth/rsvp" class="btn btn-lg btn-default">RSVP</a>&nbsp;&nbsp;&nbsp;
+							<a href="auth/signup" class="btn btn-lg btn-default">Sign Up</a>						
+					</div>
+
+				</div>
+				<div class="col-md-2"></div>
+			</div>
+		</div>
 	</body>
 
 </html>
